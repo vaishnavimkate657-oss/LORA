@@ -24,7 +24,7 @@ public class Destination {
     @Column(nullable = false)
     private String category;
 
-    @Column(columnDefinition = "NVARCHAR(MAX)", nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String description;
 
     @Column(name = "starting_price", nullable = false, precision = 10, scale = 2)

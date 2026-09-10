@@ -19,7 +19,7 @@ public class PartnerConnectionRequest {
     @JoinColumn(name = "sender_id", nullable = false)
     private User sender;
 
-    @Column(columnDefinition = "NVARCHAR(MAX)", nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String message;
 
     @Column(nullable = false)

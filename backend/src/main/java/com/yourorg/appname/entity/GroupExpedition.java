@@ -33,7 +33,7 @@ public class GroupExpedition {
     @Column(name = "filled_slots", nullable = false)
     private Integer filledSlots = 0;
 
-    @Column(columnDefinition = "NVARCHAR(MAX)", nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String description;
 
     @Column(name = "image_url", length = 1000, nullable = false)

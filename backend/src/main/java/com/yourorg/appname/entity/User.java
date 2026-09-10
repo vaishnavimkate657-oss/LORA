@@ -27,7 +27,7 @@ public class User {
     @Column(name = "avatar_url", length = 1000)
     private String avatarUrl;
 
-    @Column(columnDefinition = "NVARCHAR(MAX)")
+    @Column(columnDefinition = "TEXT")
     private String bio;
 
     @Column(nullable = false)

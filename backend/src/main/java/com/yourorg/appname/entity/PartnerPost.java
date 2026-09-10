@@ -31,7 +31,7 @@ public class PartnerPost {
     @Column(name = "date_range", nullable = false)
     private String dateRange;
 
-    @Column(columnDefinition = "NVARCHAR(MAX)", nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String note;
 
     @Column(name = "preferred_gender", nullable = false)

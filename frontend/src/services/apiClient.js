@@ -1,12 +1,24 @@
 import axios from 'axios';
 import { tokenStorage } from '../utils/tokenStorage';
 
+const resolveBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL;
+  if (!envUrl) {
+    return '/api';
+  }
+  let cleanUrl = envUrl.trim().replace(/\/+$/, '');
+  if (!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://') && !cleanUrl.startsWith('/')) {
+    cleanUrl = `https://${cleanUrl}`;
+  }
+  return cleanUrl.endsWith('/api') ? cleanUrl : `${cleanUrl}/api`;
+};
+
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: resolveBaseUrl(),
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000,
+  timeout: 15000,
 });
 
 // Request Interceptor: Attach JWT Token if present
